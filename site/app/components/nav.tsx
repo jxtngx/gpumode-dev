@@ -8,7 +8,7 @@ const navItems = {
     name: 'Cookbook',
   },
   '/lectures': {
-    name: 'Pastlectures',
+    name: 'Lectures',
   },
   '/irl': {
     name: 'IRL',
