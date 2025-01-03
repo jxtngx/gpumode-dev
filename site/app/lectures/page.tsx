@@ -21,7 +21,7 @@ export default function Page() {
             <div className="w-full flex flex-col items-center md:flex-row space-x-0 md:space-x-2">
                 <p className="mb-4">
                     {'Interested in giving a talk? Reach out to us on '}
-                    <Link href="https://lu.ma/gpumode">
+                    <Link href="https://discord.gg/gpumode">
                         <u>Discord</u>
                     </Link>
                     {' !'}
