@@ -94,7 +94,7 @@ export default function Lectures() {
                             Going Further with CUDA for Python
                         </p>
                         <p className="text-neutral-600 dark:text-neutral-400 w-[200px] tabular-nums">
-                            Thomas Viehmann
+                            Jeremy Howard
                         </p>
                     </div>
                 </Link>
