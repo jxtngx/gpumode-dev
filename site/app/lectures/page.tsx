@@ -7,7 +7,7 @@ export default function Page() {
             <h1 className="font-semibold text-2xl mb-8 tracking-tighter">Lectures</h1>
             <p className="mb-4">
                 {`Links to each recording are provided below. Check out the `}
-            <Link href="https://github.com/gpu-mode/lectures" sx={{ textDecoration: 'underline' }}>
+            <Link href="https://github.com/gpu-mode/lectures">
                  <u>GitHub repo</u>
             </Link>
                 {` for accompanying code and slides. `}
