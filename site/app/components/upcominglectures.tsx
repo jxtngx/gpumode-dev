@@ -106,7 +106,7 @@ export default function UpcomingLectures() {
                         Umar Jamil
                     </p>
                     <p className="text-neutral-900 dark:text-neutral-100 text-right w-[175px]">
-                        Mar 1, 2000 GMT
+                        Mar 8, 2000 GMT
                     </p>
                 </div>
                 <div className="w-full flex flex-col items-center md:flex-row space-x-0 md:space-x-2">
