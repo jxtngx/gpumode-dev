@@ -1,5 +1,6 @@
 import Link from "next/link";
-import ArrowIcon from 'app/components/arrowicon'
+import ArrowIconUp from 'app/components/arrowIconUp'
+import ArrowIconRight from 'app/components/arrowIconRight'
 
 export default function Page() {
     return (
@@ -9,7 +10,7 @@ export default function Page() {
             <div>
             <Link className="flex flex-col space-y-2 mb-4" href="" target="_blank">
                   <div className="w-full flex flex-col items-center md:flex-row space-x-0 md:space-x-2">
-                      <ArrowIcon/>
+                      <ArrowIconRight/>
                       <hr></hr>
                       <p className="text-neutral-900 dark:text-neutral-100 w-[100px]">
                           Stay tuned!

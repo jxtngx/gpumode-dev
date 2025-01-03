@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { formatDate, getBlogPosts } from 'app/cookbook/utils'
-import ArrowIcon from 'app/components/arrowicon'
+import ArrowIconUp from 'app/components/arrowIconUp'
 
 export function BlogPosts() {
   let allBlogs = getBlogPosts()
@@ -23,7 +23,7 @@ export function BlogPosts() {
             href={`/cookbook/${post.slug}`}
           >
             <div className="w-full flex flex-col items-center md:flex-row space-x-0 md:space-x-2">
-              <ArrowIcon/>
+              <ArrowIconUp/>
               <hr></hr>
               <p className="text-neutral-900 dark:text-neutral-100 w-[150px]">
                 {post.metadata.title}

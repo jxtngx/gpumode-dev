@@ -1,4 +1,4 @@
-import ArrowIcon from 'app/components/arrowicon'
+import ArrowIconUp from 'app/components/arrowIconUp'
 
 export default function Footer() {
   return (
@@ -11,7 +11,7 @@ export default function Footer() {
               target="_blank"
               href="https://github.com/gpu-mode"
           >
-            <ArrowIcon/>
+            <ArrowIconUp/>
             <p className="ml-2 h-7">GitHub</p>
           </a>
         </li>
@@ -22,7 +22,7 @@ export default function Footer() {
               target="_blank"
               href="https://www.youtube.com/@gpumode"
           >
-            <ArrowIcon/>
+            <ArrowIconUp/>
             <p className="ml-2 h-7">YouTube</p>
           </a>
         </li>
@@ -33,7 +33,7 @@ export default function Footer() {
               target="_blank"
               href="https://discord.gg/gpumode"
           >
-            <ArrowIcon/>
+            <ArrowIconUp/>
             <p className="ml-2 h-7">Discord</p>
           </a>
         </li>
@@ -44,7 +44,7 @@ export default function Footer() {
               target="_blank"
               href="https://lu.ma/gpumode"
           >
-            <ArrowIcon/>
+            <ArrowIconUp/>
             <p className="ml-2 h-7">Luma</p>
           </a>
         </li>
@@ -55,7 +55,7 @@ export default function Footer() {
               target="_blank"
               href="https://gpumode.substack.com/"
           >
-            <ArrowIcon/>
+            <ArrowIconUp/>
             <p className="ml-2 h-7">Substack</p>
           </a>
         </li>
@@ -66,7 +66,7 @@ export default function Footer() {
               target="_blank"
               href="https://modal.com/gpu-glossary"
           >
-            <ArrowIcon/>
+            <ArrowIconUp/>
             <p className="ml-2 h-7">Glossary</p>
           </a>
         </li>
