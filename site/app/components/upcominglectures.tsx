@@ -48,10 +48,10 @@ export default function UpcomingLectures() {
                     <ArrowIconRight/>
                     <hr/>
                     <p className="text-neutral-900 dark:text-neutral-100 w-[300px]">
-                        Outperforming CUBLAS
+                        Efficient MatMul on Turing GPUs
                     </p>
                     <p className="text-neutral-600 dark:text-neutral-400 w-[175px]">
-                        @pranjalssh
+                        Erik Schultheis
                     </p>
                     <p className="text-neutral-900 dark:text-neutral-100 text-right w-[175px]">
                         Feb 8, 2000 GMT
@@ -61,10 +61,10 @@ export default function UpcomingLectures() {
                     <ArrowIconRight/>
                     <hr/>
                     <p className="text-neutral-900 dark:text-neutral-100 w-[300px]">
-                        Efficient MatMul on Turing GPUs
+                        Outperforming CUBLAS
                     </p>
                     <p className="text-neutral-600 dark:text-neutral-400 w-[175px]">
-                        Erik Schultheis
+                        @pranjalssh
                     </p>
                     <p className="text-neutral-900 dark:text-neutral-100 text-right w-[175px]">
                         Feb 15, 2000 GMT
