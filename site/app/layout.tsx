@@ -1,4 +1,4 @@
-import './global.css'
+import './globals.css'
 import type { Metadata } from 'next'
 import { GeistSans } from 'geist/font/sans'
 import { GeistMono } from 'geist/font/mono'
@@ -7,6 +7,11 @@ import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import Footer from './components/footer'
 import { baseUrl } from './sitemap'
+import { ThemeProvider } from './components/theme-provider'
+
+// Use Geist fonts
+const fontSans = GeistSans
+const fontMono = GeistMono
 
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
@@ -47,19 +52,28 @@ export default function RootLayout({
     <html
       lang="en"
       className={cx(
-        'text-black bg-white dark:text-white dark:bg-black',
-        GeistSans.variable,
-        GeistMono.variable
+        'text-black bg-white dark:text-white dark:bg-[#111]',
+        fontSans.variable,
+        fontMono.variable
       )}
+      suppressHydrationWarning
     >
-      <body className="antialiased max-w-xl mx-4 mt-8 lg:mx-auto">
-        <main className="flex-auto min-w-0 mt-6 flex flex-col px-2 md:px-0">
-          <Navbar />
-          {children}
-          <Footer />
-          <Analytics />
-          <SpeedInsights />
-        </main>
+      <body className="antialiased max-w-xl mx-4 mt-8 lg:mx-auto min-h-screen dark:bg-[#111]">
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+        >
+          <div className="min-h-screen dark:bg-[#111]">
+            <main className="flex-auto min-w-0 mt-6 flex flex-col px-2 md:px-0">
+              <Navbar />
+              {children}
+              <Footer />
+              <Analytics />
+              <SpeedInsights />
+            </main>
+          </div>
+        </ThemeProvider>
       </body>
     </html>
   )

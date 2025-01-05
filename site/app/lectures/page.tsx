@@ -24,7 +24,7 @@ export default function Page() {
                     <Link href="https://discord.gg/gpumode">
                         <u>Discord</u>
                     </Link>
-                    {' !'}
+                    {'!'}
                 </p>
             </div>
             <br/>
