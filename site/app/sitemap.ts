@@ -1,6 +1,6 @@
 import { getBlogPosts } from 'app/cookbook/utils'
 
-export const baseUrl = 'https://cookbook.jxtngx.ai'
+export const baseUrl = 'https://gpumode.ai'
 
 export default async function sitemap() {
   let blogs = getBlogPosts().map((post) => ({
