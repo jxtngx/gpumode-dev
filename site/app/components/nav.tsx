@@ -3,9 +3,7 @@
 import React from 'react'
 import Link from 'next/link'
 import { useTheme } from 'next-themes'
-import { MoonIcon, SunIcon } from 'lucide-react'
 import { Button } from "app/registry/button"
-import { useMetaColor, META_THEME_COLORS } from "@/app/hooks/use-meta-colors"
 import { cn } from "app/lib/utils"
 
 
