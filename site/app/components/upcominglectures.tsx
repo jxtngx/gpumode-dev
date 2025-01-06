@@ -1,12 +1,7 @@
-import Link from 'next/link'
 import ArrowIconRight from 'app/components/arrowIconRight'
 import { readXMLFile } from 'app/lectures/utils'
-import { fetchGuildScheduledEvents } from 'app/lectures/utils'
 
 export default async function UpcomingLectures() {
-    const guildId = process.env.GUILD_ID
-    const token = process.env.DISCORD_TOKEN
-    const events = await fetchGuildScheduledEvents(guildId, token)
 
     try {
         const data = readXMLFile('app/public/lectures.xml');
