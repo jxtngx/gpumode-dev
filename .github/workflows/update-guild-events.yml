@@ -14,6 +14,8 @@ jobs:
     
     steps:
       - uses: actions/checkout@v4.2.2
+        with:
+          token: ${{ secrets.GH_PAT }}
       
       - name: Set up Node.js
         uses: actions/setup-node@v4.1.0
@@ -49,7 +51,7 @@ jobs:
           git config user.email ${{ github.actor_id }}+${{ github.actor }}@users.noreply.github.com
           git add ./site/app/public/future_events.json
           git commit -m "Update data for ${{ steps.date.outputs.date }}"
-          git push origin update/${{ steps.date.outputs.date }}
+          git push https://${{ secrets.GH_PAT }}@github.com/${{ github.repository }}.git HEAD:update/${{ steps.date.outputs.date }}
           
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v7.0.6
@@ -58,5 +60,5 @@ jobs:
           body: "Automated data update via GitHub Actions"
           branch: "update/${{ steps.date.outputs.date }}"
           base: "main"
-          assignees: "jxtngx"
+          assignees: ${{ github.actor }}
           commit-message: "Update data for ${{ steps.date.outputs.date }}"
