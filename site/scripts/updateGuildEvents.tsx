@@ -116,12 +116,11 @@ async function main() {
         if (result) {
             console.log('No changes detected');
             process.exit(0);
+        } else {
+            writeNewEvents(newEvents);
+            console.log('Changes written successfully');
+            process.exit(1);
         }
-
-        writeNewEvents(newEvents);
-        console.log('Changes written successfully');
-        process.exit(1);
-        
     } catch (error) {
         console.error('Error in main:', error);
         process.exit(1);

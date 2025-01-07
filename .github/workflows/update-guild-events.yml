@@ -43,10 +43,11 @@ jobs:
           DISCORD_TOKEN: ${{ secrets.DISCORD_TOKEN }}
         run: |
           if npx ts-node updateGuildEvents.tsx; then
+            echo "Changes detected"
             echo "changes=true" >> $GITHUB_OUTPUT
           else
-            echo "changes=false" >> $GITHUB_OUTPUT
             echo "No changes detected"
+            echo "changes=false" >> $GITHUB_OUTPUT
           fi
           
       - name: Create new branch
