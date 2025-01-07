@@ -43,7 +43,7 @@ jobs:
         run: npx ts-node updateGuildEvents.tsx
           
       - name: Create new branch
-        run: git checkout -b update/${{ steps.date.outputs.date }}
+        run: git checkout -b update-events/${{ steps.date.outputs.date }}
           
       - name: Commit changes
         run: |
@@ -52,13 +52,14 @@ jobs:
           git add ./site/app/public/future_events.json
           git commit -m "Update data for ${{ steps.date.outputs.date }}"
           git push https://${{ secrets.GH_PAT }}@github.com/${{ github.repository }}.git HEAD:update/${{ steps.date.outputs.date }}
-          
+
       - name: Create Pull Request
-        uses: peter-evans/create-pull-request@v7.0.6
-        with:
-          title: "Data Update for ${{ steps.date.outputs.date }}"
-          body: "Automated data update via GitHub Actions"
-          branch: "update/${{ steps.date.outputs.date }}"
-          base: "main"
-          assignees: ${{ github.actor }}
-          commit-message: "Update data for ${{ steps.date.outputs.date }}"
+        env:
+          GH_TOKEN: ${{ secrets.GH_PAT }}
+        run: |
+          gh pr create \
+            --title "Update events for ${{ steps.date.outputs.date }}" \
+            --body "Automated PR to update Discord events" \
+            --base main \
+            --head update/${{ steps.date.outputs.date }} \
+            --reviewer ${{ github.actor }}
