@@ -34,8 +34,8 @@ jobs:
         run: pnpm install
         
       - name: Update JSON file
-        working-directory: ./site
-        run: npx ts-node ./site/scripts/updateGuildEvents.tsx
+        working-directory: ./site/scripts
+        run: npx ts-node updateGuildEvents.tsx
           
       - name: Create new branch
         run: git checkout -b update/${{ steps.date.outputs.date }}
