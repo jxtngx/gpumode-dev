@@ -3,7 +3,7 @@ import dotenv from 'dotenv'
 
 dotenv.config()
 
-const rootDir = "./site"
+const dataDir = "../app/public/"
 const guildId = process.env.GUILD_ID
 const token = process.env.DISCORD_TOKEN
 
@@ -84,13 +84,12 @@ function writeNewEvents(result, newEvents): void {
         return;
     }
 
-    const outputDir = './site/app/public/';
-    const outputPath = `${outputDir}/future_events.json`;
+    const outputPath = `${dataDir}/future_events.json`;
 
     try {
         // Ensure directory exists
-        if (!fs.existsSync(outputDir)) {
-            fs.mkdirSync(outputDir, { recursive: true });
+        if (!fs.existsSync(dataDir)) {
+            fs.mkdirSync(dataDir, { recursive: true });
         }
 
         // Write formatted JSON
@@ -110,7 +109,7 @@ function writeNewEvents(result, newEvents): void {
 
 async function main() {
     console.log(`the directory is ${__dirname}`);
-    const oldEvents = readEventsOnDisplay('../site/app/public/future_events.json');
+    const oldEvents = readEventsOnDisplay(`${dataDir}future_events.json`);
     const newEvents = await fetchGuildScheduledEvents(guildId, token);
     const result = compareEvents(oldEvents, newEvents);
     writeNewEvents(result, newEvents)
