@@ -25,10 +25,7 @@ jobs:
         run: npx ts-node scripts/updateGuildEvents.tsx
           
       - name: Create new branch
-        run: |
-          git config --global user.name 'GitHub Action'
-          git config --global user.email 'action@github.com'
-          git checkout -b update/${{ steps.date.outputs.date }}
+        run: git checkout -b update/${{ steps.date.outputs.date }}
           
       - name: Commit changes
         run: |
