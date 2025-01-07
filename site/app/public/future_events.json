@@ -22,8 +22,8 @@
       "primary_guild": null
     },
     "image": null,
-    "scheduled_start_time": "2025-01-18T20:00:00+00:00",
-    "scheduled_end_time": "2025-01-18T21:30:00+00:00",
+    "scheduled_start_time": "2025-01-25T20:00:00+00:00",
+    "scheduled_end_time": "2025-01-25T21:00:00+00:00",
     "status": 1,
     "entity_type": 3,
     "entity_id": null,
@@ -58,7 +58,7 @@
       "primary_guild": null
     },
     "image": null,
-    "scheduled_start_time": "2025-01-25T20:00:00+00:00",
+    "scheduled_start_time": "2025-01-24T20:00:00+00:00",
     "scheduled_end_time": "2025-01-25T21:30:00+00:00",
     "status": 1,
     "entity_type": 3,
