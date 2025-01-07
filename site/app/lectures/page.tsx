@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import PastLectures from 'app/components/pastlectures'
-import UpcomingLectures from 'app/components/upcomingLectures'
+import UpcomingLectures from 'app/components/futureLectures'
 
 export default function Page() {
     return (
