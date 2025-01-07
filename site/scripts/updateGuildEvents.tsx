@@ -115,11 +115,11 @@ async function main() {
         
         if (result) {
             console.log('No changes detected');
-            process.exit(0);
+            process.exit(1);
         } else {
             writeNewEvents(newEvents);
             console.log('Changes written successfully');
-            process.exit(1);
+            process.exit(0);
         }
     } catch (error) {
         console.error('Error in main:', error);
