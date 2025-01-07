@@ -36,16 +36,25 @@ jobs:
         run: pnpm install
         
       - name: Update JSON file
+        id: update
         working-directory: ./site/scripts
         env:
           GUILD_ID: ${{ secrets.GUILD_ID }}
           DISCORD_TOKEN: ${{ secrets.DISCORD_TOKEN }}
-        run: npx ts-node updateGuildEvents.tsx
+        run: |
+          if npx ts-node updateGuildEvents.tsx; then
+            echo "changes=true" >> $GITHUB_OUTPUT
+          else
+            echo "changes=false" >> $GITHUB_OUTPUT
+            echo "No changes detected"
+          fi
           
       - name: Create new branch
+        if: steps.update.outputs.changes == 'true'
         run: git checkout -b update-events/${{ steps.date.outputs.date }}
           
       - name: Commit changes
+        if: steps.update.outputs.changes == 'true'
         run: |
           git config user.name ${{ github.actor }}
           git config user.email ${{ github.actor_id }}+${{ github.actor }}@users.noreply.github.com
@@ -54,6 +63,7 @@ jobs:
           git push https://${{ secrets.GH_PAT }}@github.com/${{ github.repository }}.git HEAD:update-events/${{ steps.date.outputs.date }}
 
       - name: Create Pull Request
+        if: steps.update.outputs.changes == 'true'
         env:
           GH_TOKEN: ${{ secrets.GH_PAT }}
         run: |

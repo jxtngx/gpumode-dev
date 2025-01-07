@@ -82,11 +82,7 @@ async function fetchGuildScheduledEvents(guildId, token) {
   }
 }
 
-function writeNewEvents(result, newEvents): void {
-    if (result === true) {
-        console.log('No changes detected, skipping write');
-        return;
-    }
+function writeNewEvents(newEvents): boolean {
 
     const outputPath = `${dataDir}/future_events.json`;
 
@@ -104,7 +100,7 @@ function writeNewEvents(result, newEvents): void {
         );
 
         console.log(`Successfully wrote events to ${outputPath}`);
-        return;
+        return true;
     } catch (error) {
         console.error('Error writing events:', error);
         throw error;
@@ -112,12 +108,25 @@ function writeNewEvents(result, newEvents): void {
 }
 
 async function main() {
-    console.log(`the directory is ${__dirname}`);
-    const oldEvents = readEventsOnDisplay(`${dataDir}future_events.json`);
-    const newEvents = await fetchGuildScheduledEvents(guildId, token);
-    const result = compareEvents(oldEvents, newEvents);
-    writeNewEvents(result, newEvents)
+    try {
+        const oldEvents = readEventsOnDisplay(`${dataDir}future_events.json`);
+        const newEvents = await fetchGuildScheduledEvents(guildId, token);
+        const result = compareEvents(oldEvents, newEvents);
+        
+        if (result) {
+            console.log('No changes detected');
+            process.exit(0);
+        }
 
+        writeNewEvents(newEvents);
+        console.log('Changes written successfully');
+        process.exit(1);
+        
+    } catch (error) {
+        console.error('Error in main:', error);
+        process.exit(1);
+    }
 }
+
 
 main()
