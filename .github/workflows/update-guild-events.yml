@@ -7,6 +7,10 @@ on:
   # Manually trigger the workflow
   workflow_dispatch:
 
+env:
+  GUILD_ID: ${{ secrets.GUILD_ID }}
+  DISCORD_TOKEN: ${{ secrets.DISCORD_TOKEN }}
+
 jobs:
   update-json:
     runs-on: ubuntu-latest
