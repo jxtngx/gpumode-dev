@@ -4,6 +4,8 @@ on:
   schedule:
     # Runs at 7 AM UTC on every weekday
     - cron: '0 7 * * 1-5'
+  # Manually trigger the workflow
+  workflow_dispatch:
 
 jobs:
   update-json:
