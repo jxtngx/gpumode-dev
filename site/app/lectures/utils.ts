@@ -26,7 +26,11 @@ export function readXMLFile(filePath: string): any {
 // }
 
 
-export async function fetchGuildScheduledEvents(guildId, token) {
+
+export async function fetchGuildScheduledEvents() {
+    const guildId = process.env.GUILD_ID
+    const token = process.env.DISCORD_TOKEN
+
   try {
       const response = await fetch(`https://discord.com/api/v10/guilds/${guildId}/scheduled-events`, {
           headers: {
@@ -40,6 +44,7 @@ export async function fetchGuildScheduledEvents(guildId, token) {
       }
 
       const events = await response.json();
+      console.log(events)
       return events;
   } catch (error) {
       console.error('Error fetching scheduled events:', error);

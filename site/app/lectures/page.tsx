@@ -1,7 +1,6 @@
 import Link from 'next/link'
 import PastLectures from 'app/components/pastlectures'
-import UpcomingLectures from 'app/components/upcominglectures'
-import ArrowIconUp from "app/components/arrowIconUp";
+import UpcomingLectures from 'app/components/futureLectures'
 
 export default function Page() {
     return (

@@ -1,0 +1,44 @@
+name: Update Guild Events
+
+on:
+  schedule:
+    # Runs at 7 AM UTC on every weekday
+    - cron: '0 7 * * 1-5'
+
+jobs:
+  update-json:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - uses: actions/checkout@v4.2.2
+      
+      - name: Set up Node.js
+        uses: actions/setup-node@v4.1.0
+        with:
+          node-version: '18'
+          
+      - name: Get current date
+        id: date
+        run: echo "date=$(date +'%Y-%m-%d')" >> $GITHUB_OUTPUT
+        
+      - name: Update JSON file
+        run: npx ts-node scripts/updateGuildEvents.tsx
+          
+      - name: Create new branch
+        run: git checkout -b update/${{ steps.date.outputs.date }}
+          
+      - name: Commit changes
+        run: |
+          git add app/public/future_events.json
+          git commit -m "Update data for ${{ steps.date.outputs.date }}"
+          git push origin update/${{ steps.date.outputs.date }}
+          
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v7.0.6
+        with:
+          title: "Data Update for ${{ steps.date.outputs.date }}"
+          body: "Automated data update via GitHub Actions"
+          branch: "update/${{ steps.date.outputs.date }}"
+          base: "main"
+          assignees: "jxtngx"
+          commit-message: "Update data for ${{ steps.date.outputs.date }}"
