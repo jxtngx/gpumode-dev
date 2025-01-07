@@ -7,10 +7,6 @@ on:
   # Manually trigger the workflow
   workflow_dispatch:
 
-env:
-  GUILD_ID: ${{ secrets.GUILD_ID }}
-  DISCORD_TOKEN: ${{ secrets.DISCORD_TOKEN }}
-
 jobs:
   update-json:
     runs-on: ubuntu-latest
@@ -39,6 +35,9 @@ jobs:
         
       - name: Update JSON file
         working-directory: ./site/scripts
+        env:
+          GUILD_ID: ${{ secrets.GUILD_ID }}
+          DISCORD_TOKEN: ${{ secrets.DISCORD_TOKEN }}
         run: npx ts-node updateGuildEvents.tsx
           
       - name: Create new branch
