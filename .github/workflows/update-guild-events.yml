@@ -24,6 +24,9 @@ jobs:
         id: date
         run: echo "date=$(date +'%Y-%m-%d')" >> $GITHUB_OUTPUT
 
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4.0.0
+
       - name: Install dependencies
         working-directory: ./site
         run: pnpm install
