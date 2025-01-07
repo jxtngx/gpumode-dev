@@ -45,8 +45,8 @@ jobs:
           
       - name: Commit changes
         run: |
-          git config user.name $GITHUB_ACTOR
-          git config user.email ${GITHUB_ACTOR_ID}+${secrets.GITHUB_ACTOR}@users.noreply.github.com
+          git config user.name ${{ github.actor }}
+          git config user.email ${{ github.actor_id }}+${{ github.actor }}@users.noreply.github.com
           git add ./site/app/public/future_events.json
           git commit -m "Update data for ${{ steps.date.outputs.date }}"
           git push origin update/${{ steps.date.outputs.date }}
