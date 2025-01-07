@@ -109,7 +109,7 @@ function writeNewEvents(result, newEvents): void {
 }
 
 async function main() {
-    console.log(__dirname);
+    console.log(`the directory is ${__dirname}`);
     const oldEvents = readEventsOnDisplay('../site/app/public/future_events.json');
     const newEvents = await fetchGuildScheduledEvents(guildId, token);
     const result = compareEvents(oldEvents, newEvents);
