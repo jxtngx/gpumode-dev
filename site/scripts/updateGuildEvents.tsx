@@ -7,6 +7,10 @@ const dataDir = "../app/public/"
 const guildId = process.env.GUILD_ID
 const token = process.env.DISCORD_TOKEN
 
+if (!guildId || !token) {
+    throw new Error('Missing environment variables: GUILD_ID, DISCORD_TOKEN');
+}
+
 export function readEventsOnDisplay<T>(filePath: string): T {
   try {
     // Check if file exists
