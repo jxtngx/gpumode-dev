@@ -4,7 +4,7 @@ import { readXMLFile } from 'app/lectures/utils'
 export default async function UpcomingLectures() {
 
     try {
-        const data = readXMLFile('app/public/lectures.xml');
+        const data = readXMLFile('app/public/future_events.json');
         
         // Try different ways to access the lectures array
         const lectures = data?.lectures?.lecture || data?.lecture || data || [];
