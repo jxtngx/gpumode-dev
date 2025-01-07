@@ -51,7 +51,7 @@ jobs:
           git config user.email ${{ github.actor_id }}+${{ github.actor }}@users.noreply.github.com
           git add ./site/app/public/future_events.json
           git commit -m "Update data for ${{ steps.date.outputs.date }}"
-          git push https://${{ secrets.GH_PAT }}@github.com/${{ github.repository }}.git HEAD:update/${{ steps.date.outputs.date }}
+          git push https://${{ secrets.GH_PAT }}@github.com/${{ github.repository }}.git HEAD:update-events/${{ steps.date.outputs.date }}
 
       - name: Create Pull Request
         env:
@@ -61,5 +61,5 @@ jobs:
             --title "Update events for ${{ steps.date.outputs.date }}" \
             --body "Automated PR to update Discord events" \
             --base main \
-            --head update/${{ steps.date.outputs.date }} \
+            --head update-events/${{ steps.date.outputs.date }} \
             --reviewer ${{ github.actor }}
