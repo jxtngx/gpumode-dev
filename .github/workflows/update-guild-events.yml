@@ -11,6 +11,7 @@ jobs:
   update-json:
     runs-on: ubuntu-latest
     
+    
     steps:
       - uses: actions/checkout@v4.2.2
       
@@ -22,8 +23,13 @@ jobs:
       - name: Get current date
         id: date
         run: echo "date=$(date +'%Y-%m-%d')" >> $GITHUB_OUTPUT
+
+      - name: Install dependencies
+        working-directory: ./site
+        run: pnpm install
         
       - name: Update JSON file
+        working-directory: ./site
         run: npx ts-node ./site/scripts/updateGuildEvents.tsx
           
       - name: Create new branch
