@@ -322,5 +322,41 @@
     "entity_metadata": {
       "location": "zoom"
     }
+  },
+  {
+    "id": "1326234899371524157",
+    "guild_id": "1189498204333543425",
+    "name": "Scaling Laws for Low Precision",
+    "description": "Speaker: Tanishq Kumar",
+    "channel_id": null,
+    "creator_id": "325883680419610631",
+    "creator": {
+      "id": "325883680419610631",
+      "username": "marksaroufim",
+      "avatar": "e8c7897262bec5319d2bc8ebf5eecf4c",
+      "discriminator": "0",
+      "public_flags": 128,
+      "flags": 128,
+      "banner": "a_16d060f298c85c504f38f50d06540149",
+      "accent_color": 2823263,
+      "global_name": "Seraphim",
+      "avatar_decoration_data": null,
+      "banner_color": "#2b145f",
+      "clan": null,
+      "primary_guild": null
+    },
+    "image": null,
+    "scheduled_start_time": "2025-03-22T19:00:00+00:00",
+    "scheduled_end_time": "2025-03-22T20:00:00+00:00",
+    "status": 1,
+    "entity_type": 3,
+    "entity_id": null,
+    "recurrence_rule": null,
+    "privacy_level": 2,
+    "sku_ids": [],
+    "guild_scheduled_event_exceptions": [],
+    "entity_metadata": {
+      "location": "zoom"
+    }
   }
 ]
