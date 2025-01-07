@@ -3,6 +3,7 @@ import dotenv from 'dotenv'
 
 dotenv.config()
 
+const rootDir = "./site"
 const guildId = process.env.GUILD_ID
 const token = process.env.DISCORD_TOKEN
 
@@ -83,7 +84,7 @@ function writeNewEvents(result, newEvents): void {
         return;
     }
 
-    const outputDir = './app/public/';
+    const outputDir = './site/app/public/';
     const outputPath = `${outputDir}/future_events.json`;
 
     try {
@@ -109,7 +110,7 @@ function writeNewEvents(result, newEvents): void {
 
 async function main() {
 
-    const oldEvents = readEventsOnDisplay('./app/public/future_events.json');
+    const oldEvents = readEventsOnDisplay('../site/app/public/future_events.json');
     const newEvents = await fetchGuildScheduledEvents(guildId, token);
     const result = compareEvents(oldEvents, newEvents);
     writeNewEvents(result, newEvents)
