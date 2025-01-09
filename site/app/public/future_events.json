@@ -74,8 +74,8 @@
   {
     "id": "1324573873600991374",
     "guild_id": "1189498204333543425",
-    "name": "NVIDIA HOLD: Profiling",
-    "description": "",
+    "name": "NVIDIA Profiling",
+    "description": "Speaker: Magnus Strengert",
     "channel_id": null,
     "creator_id": "325883680419610631",
     "creator": {
@@ -94,8 +94,8 @@
       "primary_guild": null
     },
     "image": null,
-    "scheduled_start_time": "2025-02-01T20:00:00+00:00",
-    "scheduled_end_time": "2025-02-01T21:30:00+00:00",
+    "scheduled_start_time": "2025-02-14T18:00:00+00:00",
+    "scheduled_end_time": "2025-02-14T19:30:00+00:00",
     "status": 1,
     "entity_type": 3,
     "entity_id": null,
@@ -254,7 +254,7 @@
   {
     "id": "1324575106894270506",
     "guild_id": "1189498204333543425",
-    "name": "Umar's journey in learning triton and Flash Attention, tips for people embarking on this",
+    "name": "CUDA, Triton, Flash Attention: a learning journey",
     "description": "Speaker: Umar Jamil",
     "channel_id": null,
     "creator_id": "325883680419610631",
