@@ -6,9 +6,9 @@ import { Navbar } from './components/nav'
 import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import Footer from './components/footer'
-import { baseUrl } from './sitemap'
-import { ThemeProvider } from './components/theme-provider'
+import { ThemeProvider } from './components/ui/themeProvider'
 
+const baseUrl = 'https://gpumode.ai'
 const fontSans = GeistSans
 const fontMono = GeistMono
 

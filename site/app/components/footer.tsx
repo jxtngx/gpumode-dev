@@ -1,9 +1,20 @@
-import ArrowIconUp from 'app/components/arrowIconUp'
+import ArrowIconUp from '@/app/components/ui/arrowIconUp'
 
 export default function Footer() {
   return (
     <footer className="mb-16">
       <ul className="font-sm mt-8 flex flex-col space-x-0 space-y-2 text-neutral-600 md:flex-row md:space-x-4 md:space-y-0 dark:text-neutral-300">
+        <li>
+          <a
+              className="flex items-center transition-all hover:text-neutral-800 dark:hover:text-neutral-100"
+              rel="noopener noreferrer"
+              target="_blank"
+              href="https://discord.gg/gpumode"
+          >
+            <ArrowIconUp/>
+            <p className="ml-2 h-7">Discord</p>
+          </a>
+        </li>
         <li>
           <a
               className="flex items-center transition-all hover:text-neutral-800 dark:hover:text-neutral-100"
@@ -31,43 +42,10 @@ export default function Footer() {
               className="flex items-center transition-all hover:text-neutral-800 dark:hover:text-neutral-100"
               rel="noopener noreferrer"
               target="_blank"
-              href="https://discord.gg/gpumode"
+              href="https://github.com/gpu-mode/resource-stream"
           >
             <ArrowIconUp/>
-            <p className="ml-2 h-7">Discord</p>
-          </a>
-        </li>
-        <li>
-          <a
-              className="flex items-center transition-all hover:text-neutral-800 dark:hover:text-neutral-100"
-              rel="noopener noreferrer"
-              target="_blank"
-              href="https://lu.ma/gpumode"
-          >
-            <ArrowIconUp/>
-            <p className="ml-2 h-7">Luma</p>
-          </a>
-        </li>
-        <li>
-          <a
-              className="flex items-center transition-all hover:text-neutral-800 dark:hover:text-neutral-100"
-              rel="noopener noreferrer"
-              target="_blank"
-              href="https://gpumode.substack.com/"
-          >
-            <ArrowIconUp/>
-            <p className="ml-2 h-7">Substack</p>
-          </a>
-        </li>
-        <li>
-          <a
-              className="flex items-center transition-all hover:text-neutral-800 dark:hover:text-neutral-100"
-              rel="noopener noreferrer"
-              target="_blank"
-              href="https://modal.com/gpu-glossary"
-          >
-            <ArrowIconUp/>
-            <p className="ml-2 h-7">Glossary</p>
+            <p className="ml-2 h-7">Resources</p>
           </a>
         </li>
       </ul>

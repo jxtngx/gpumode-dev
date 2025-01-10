@@ -1,25 +1,17 @@
 import { baseUrl } from 'app/sitemap'
-import { getBlogPosts } from 'app/cookbook/utils'
+import { readEventsOnDisplay, DiscordEvent } from '@/app/components/futureLectures'
+import { formatDate } from '@/app/lib/utils'
 
 export async function GET() {
-  let allBlogs = await getBlogPosts()
+  let allLectures: DiscordEvent[] = readEventsOnDisplay('app/public/future_events.json')
 
-  const itemsXml = allBlogs
-    .sort((a, b) => {
-      if (new Date(a.metadata.publishedAt) > new Date(b.metadata.publishedAt)) {
-        return -1
-      }
-      return 1
-    })
+  const itemsXml = allLectures
     .map(
-      (post) =>
+      (event) =>
         `<item>
-          <title>${post.metadata.title}</title>
-          <link>${baseUrl}/cookbook/${post.slug}</link>
-          <description>${post.metadata.summary || ''}</description>
-          <pubDate>${new Date(
-            post.metadata.publishedAt
-          ).toUTCString()}</pubDate>
+          <title>${event.name}</title>
+          <speaker>${event.description.replace("Speaker: ", "") || ''}</speaker>
+          <date>${formatDate(event.scheduled_start_time)}</date>
         </item>`
     )
     .join('\n')

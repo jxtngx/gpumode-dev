@@ -1,8 +1,8 @@
-import ArrowIconRight from 'app/components/arrowIconRight'
-import fs from 'fs';
-import { formatDate } from '../cookbook/utils';
+import ArrowIconRight from '@/app/components/ui/arrowIconRight'
+import fs from 'fs'
+import { formatDate } from '@/app/lib/utils'
 
-interface DiscordEvent {
+export interface DiscordEvent {
     id: string;
     guild_id: string;
     name: string;
@@ -28,7 +28,7 @@ export function readEventsOnDisplay<T>(filePath: string): T {
     }
 }
 
-export default async function UpcomingLectures() {
+export default async function FutureLectures() {
 
     try {
         const lectures = readEventsOnDisplay('app/public/future_events.json');

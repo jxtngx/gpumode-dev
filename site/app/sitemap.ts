@@ -1,17 +1,14 @@
-import { getBlogPosts } from 'app/cookbook/utils'
+import { readEventsOnDisplay, DiscordEvent } from '@/app/components/futureLectures'
+import { formatDate } from '@/app/lib/utils'
 
 export const baseUrl = 'https://gpumode.ai'
 
 export default async function sitemap() {
-  let blogs = getBlogPosts().map((post) => ({
-    url: `${baseUrl}/cookbook/${post.slug}`,
-    lastModified: post.metadata.publishedAt,
-  }))
+    let allLectures: DiscordEvent[] = readEventsOnDisplay('app/public/future_events.json')
 
-  let routes = ['', '/cookbook'].map((route) => ({
-    url: `${baseUrl}${route}`,
-    lastModified: new Date().toISOString().split('T')[0],
-  }))
+    let lectures = allLectures.map((event) => ({
+        name: event.name,
+      }))
 
-  return [...routes, ...blogs]
+    return [...lectures]
 }

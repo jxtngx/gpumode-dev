@@ -11,14 +11,8 @@ const navItems = {
   '/': {
     name: 'Home',
   },
-  '/cookbook': {
-    name: 'Cookbook',
-  },
   '/lectures': {
-    name: 'Lectures',
-  },
-  '/irl': {
-    name: 'IRL',
+    name: 'Future Lectures',
   }
 }
 
