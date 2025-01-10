@@ -1,98 +1,73 @@
-# Automated Daily JSON Updates with GitHub Actions
+# Automated Discord Guild Events Updates with GitHub Actions
 
 ## Overview
-This guide demonstrates how to set up a GitHub Action that:
-- Runs every weekday at 7 AM
-- Updates a JSON file
-- Creates a dated branch
-- Opens a PR for review
+This system automatically fetches Discord guild scheduled events and updates them in the repository through GitHub Actions by:
+- Running every weekday at 7 AM UTC
+- Fetching latest Discord guild events
+- Creating a new branch if changes are detected
+- Opening a PR for review
 
-## Workflow Configuration
+## Implementation Details
+
+### Update Script (`updateGuildEvents.tsx`)
+The script handles fetching and updating Discord guild events:
+- Fetches scheduled events from Discord API
+- Compares with existing events using deep equality check
+- Updates JSON file only if changes are detected
+- Returns exit code 0 for changes, 1 for no changes
+
+Key functions:
+- `readEventsOnDisplay`: Reads and validates existing JSON file
+- `fetchGuildScheduledEvents`: Fetches events from Discord API
+- `compareEvents`: Deep comparison of old and new events
+- `writeNewEvents`: Writes updated events to JSON file
+
+### GitHub Action Workflow
 
 ```yaml
 name: Update Guild Events
-
 on:
   schedule:
-    # Runs at 7 AM UTC on every weekday
-    - cron: '0 7 * * 1-5'
+    - cron: '0 7 * * 1-5'  # 7 AM UTC weekdays
+  workflow_dispatch:        # Manual trigger option
 
 jobs:
   update-json:
     runs-on: ubuntu-latest
-    
     steps:
-      - uses: actions/checkout@v3
-      
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '18'
-          
-      - name: Get current date
-        id: date
-        run: echo "date=$(date +'%Y-%m-%d')" >> $GITHUB_OUTPUT
-        
+      # Checkout, Node.js setup, and pnpm setup steps
       - name: Update JSON file
-        run: npx ts-node scripts/updateGuildEvents.tsx
-          
-      - name: Create new branch
-        run: |
-          git config --global user.name 'GitHub Action'
-          git config --global user.email 'action@github.com'
-          git checkout -b update/${{ steps.date.outputs.date }}
-          
-      - name: Commit changes
-        run: |
-          git add app/public/future_events.json
-          git commit -m "Update data for ${{ steps.date.outputs.date }}"
-          git push origin update/${{ steps.date.outputs.date }}
-          
-      - name: Create Pull Request
-        uses: peter-evans/create-pull-request@v7.0.6
-        with:
-          title: "Data Update for ${{ steps.date.outputs.date }}"
-          body: "Automated data update via GitHub Actions"
-          branch: "update/${{ steps.date.outputs.date }}"
-          base: "main"
-          assignees: "jxtngx"
-          commit-message: "Update data for ${{ steps.date.outputs.date }}"
+        env:
+          GUILD_ID: ${{ secrets.GUILD_ID }}
+          DISCORD_TOKEN: ${{ secrets.DISCORD_TOKEN }}
+      # Branch creation and PR creation if changes detected
 ```
-
-```typescript
-const fs = require('fs');
-
-async function updateJson() {
-  const filePath = './data.json';
-  const data = JSON.parse(fs.readFileSync(filePath));
-  
-  // Add your update logic here
-  data.lastUpdated = new Date().toISOString();
-  
-  fs.writeFileSync(filePath, JSON.stringify(data, null, 2));
-}
-
-updateJson();
-
-```
-
-## Usage Notes
-
-1. The workflow runs automatically at 7 AM UTC on weekdays
-2. Creates a branch named `update/YYYY-MM-DD`
-3. Updates specified JSON file
-4. Creates PR and assigns to @jxtngx
-5. PR includes date-stamped changes
 
 ## Requirements
 
 - GitHub repository with Actions enabled
-- JSON file to update
-- Update script (Node.js example provided)
-- Reviewer (@jxtngx) with repository access
+- Discord bot token with scheduled events permissions
+- Discord guild ID
+- GitHub PAT with repo access
+- The following secrets configured:
+  - `GH_PAT`: GitHub Personal Access Token
+  - `GUILD_ID`: Discord Guild ID
+  - `DISCORD_TOKEN`: Discord Bot Token
+
+## Workflow Process
+
+1. Runs automatically at 7 AM UTC on weekdays (or manual trigger)
+2. Fetches latest Discord guild events
+3. Compares with existing events
+4. If changes detected:
+   - Creates branch named `update-events/YYYY-MM-DD`
+   - Commits updated JSON file
+   - Creates PR and assigns to repository owner
+5. If no changes: Workflow completes without modifications
 
 ## Troubleshooting
 
-- Verify Actions are enabled in repository settings
-- Check Action logs for execution details
-- Ensure proper permissions for PR creation
+- Check Action logs for execution details and error messages
+- Verify Discord bot permissions and token validity
+- Ensure GitHub PAT has necessary repository permissions
+- Check JSON file format in `site/app/public/future_events.json`
