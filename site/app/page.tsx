@@ -1,4 +1,4 @@
-import { BlogPosts } from 'app/components/posts'
+
 
 export default function Page() {
   return (
@@ -9,9 +9,6 @@ export default function Page() {
           <p className="mb-4">
               {`Welcome to GPU Mode, your favorite GPU community!`}
           </p>
-          <div className="my-8">
-              <BlogPosts/>
-          </div>
           <div>
               <iframe
                   width="560" height="315"

@@ -1,6 +1,6 @@
 import Link from "next/link";
-import ArrowIconUp from 'app/components/arrowIconUp'
-import ArrowIconRight from 'app/components/arrowIconRight'
+import ArrowIconUp from '@/app/components/ui/arrowIconUp'
+import ArrowIconRight from '@/app/components/ui/arrowIconRight'
 
 export default function Page() {
     return (
