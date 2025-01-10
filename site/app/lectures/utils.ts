@@ -1,32 +1,3 @@
-import { XMLParser } from 'fast-xml-parser'
-import fs from 'fs'
-
-
-export function readXMLFile(filePath: string): any {
-  const xmlString = fs.readFileSync(filePath, 'utf-8');
-  const parser = new XMLParser();
-  const jsonObj = parser.parse(xmlString);
-
-  return jsonObj;
-}
-
-// interface ScheduledEvent {
-//     id: string;
-//     guild_id: string;
-//     name: string;
-//     description?: string;
-//     scheduled_start_time: string;
-//     scheduled_end_time?: string;
-//     privacy_level: number;
-//     status: number;
-//     entity_type: number;
-//     entity_id?: string;
-//     creator_id?: string;
-//     // Add other fields as needed
-// }
-
-
-
 export async function fetchGuildScheduledEvents() {
     const guildId = process.env.GUILD_ID
     const token = process.env.DISCORD_TOKEN
