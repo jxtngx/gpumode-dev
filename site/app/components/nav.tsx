@@ -3,7 +3,7 @@
 import React from 'react'
 import Link from 'next/link'
 import { useTheme } from 'next-themes'
-import { Button } from "app/registry/button"
+import { Button } from "app/components/ui/button"
 import { cn } from "app/lib/utils"
 
 

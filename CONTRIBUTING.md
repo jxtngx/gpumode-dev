@@ -1,16 +1,14 @@
-# Contributing to GPUMode
+# Contributing to the GPU Mode Site
 
-We're excited that you're interested in contributing to GPUMode! This document provides guidelines and instructions for contributing to our project.
+We're excited that you're interested in contributing to the GPU Mode site! This document provides guidelines and instructions for contributing to our project.
 
 ## Join Our Community
 
 Before you start contributing, we encourage you to join our Discord community! This is where we:
-- Discuss new features and ideas
-- Coordinate development efforts
 - Share knowledge and resources
 - Provide support and guidance
 
-👉 [Join the GPUMode Discord Community](https://discord.gg/gpumode)
+👉 [Join the GPU Mode Discord Community](https://discord.gg/gpumode)
 
 ## Getting Started
 
@@ -40,14 +38,3 @@ If you have questions or need assistance:
 1. Check our documentation
 2. Ask in our Discord community
 3. Open a GitHub issue
-
-## Code of Conduct
-
-We are committed to providing a welcoming and inclusive environment. Please:
-- Be respectful and inclusive
-- Avoid offensive or harmful language
-- Help others learn and grow
-
----
-
-Have questions? Need clarification? Join our Discord community for real-time discussion and support!
