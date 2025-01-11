@@ -31,14 +31,18 @@ export function readEventsOnDisplay<T>(filePath: string): T {
 export default async function FutureLectures() {
 
     try {
-        const lectures = readEventsOnDisplay('app/public/future_events.json');
+        const lectures = readEventsOnDisplay<DiscordEvent[]>('app/public/future_events.json');
         
+        // Sort lectures by date
+        const sortedLectures = [...lectures].sort((a, b) => 
+            new Date(a.scheduled_start_time).getTime() - new Date(b.scheduled_start_time).getTime()
+        );
 
         return (
             <div>
                 <div className="flex flex-col space-y-3 mb-4">
-                    {Array.isArray(lectures) ? (
-                        lectures.map((lecture, index) => (
+                    {Array.isArray(sortedLectures) ? (
+                        sortedLectures.map((lecture, index) => (
                             <div 
                                 key={`lecture-${index}`} 
                                 className="w-full flex flex-col align-middle items-center md:flex-row space-x-0 md:space-x-2 hover:bg-accent"
