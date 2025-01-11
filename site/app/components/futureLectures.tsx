@@ -3,12 +3,12 @@ import fs from 'fs'
 import { formatDate } from '@/app/lib/utils'
 
 export interface DiscordEvent {
-    id: string;
-    guild_id: string;
     name: string;
     description: string;
     scheduled_start_time: string;
-    [key: string]: any;
+    entity_metadata: {
+        location: string;
+    };
 }
 
 export function readEventsOnDisplay<T>(filePath: string): T {

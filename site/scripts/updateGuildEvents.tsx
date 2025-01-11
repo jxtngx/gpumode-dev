@@ -82,8 +82,18 @@ async function fetchGuildScheduledEvents(guildId, token) {
   }
 }
 
-function writeNewEvents(newEvents): boolean {
+function filterEventProperties(event) {
+    return {
+        name: event.name,
+        description: event.description,
+        scheduled_start_time: event.scheduled_start_time,
+        entity_metadata: {
+            location: event.entity_metadata?.location
+        }
+    };
+}
 
+function writeNewEvents(newEvents): boolean {
     const outputPath = `${dataDir}/future_events.json`;
 
     try {
@@ -110,7 +120,8 @@ function writeNewEvents(newEvents): boolean {
 async function main() {
     try {
         const oldEvents = readEventsOnDisplay(`${dataDir}future_events.json`);
-        const newEvents = await fetchGuildScheduledEvents(guildId, token);
+        const guildEvents = await fetchGuildScheduledEvents(guildId, token);
+        const newEvents = guildEvents.map(filterEventProperties);
         const result = compareEvents(oldEvents, newEvents);
         
         if (result) {
