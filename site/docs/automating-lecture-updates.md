@@ -1,4 +1,4 @@
-# Automated Discord Guild Events Updates with GitHub Actions
+# Automating Lecture Updates with TS Node and GitHub Actions
 
 ## Overview
 This system automatically fetches Discord guild scheduled events and updates them in the repository through GitHub Actions by:
@@ -6,6 +6,25 @@ This system automatically fetches Discord guild scheduled events and updates the
 - Fetching latest Discord guild events
 - Creating a new branch if changes are detected
 - Opening a PR for review
+
+```mermaid
+flowchart TD
+    A[Start Script] --> B[Load Environment Variables]
+    B --> C[Read Existing Events]
+    C --> D[Fetch New Events from Discord]
+    D --> E{Compare Events}
+    E -->|Different| F[Write New Events to JSON]
+    F --> G[Exit Code 0]
+    E -->|Same| H[Skip Update]
+    H --> I[Exit Code 1]
+    
+    subgraph "Error Handling"
+        C -.->|File Error| J[Log Error]
+        D -.->|API Error| J
+        F -.->|Write Error| J
+        J -->|Exit 1| K[End with Error]
+    end
+```
 
 ## Implementation Details
 
@@ -24,23 +43,18 @@ Key functions:
 
 ### GitHub Action Workflow
 
-```yaml
-name: Update Guild Events
-on:
-  schedule:
-    - cron: '0 7 * * 1-5'  # 7 AM UTC weekdays
-  workflow_dispatch:        # Manual trigger option
+The workflow is defined in `.github/workflows/update-guild-events.yml`:
 
-jobs:
-  update-json:
-    runs-on: ubuntu-latest
-    steps:
-      # Checkout, Node.js setup, and pnpm setup steps
-      - name: Update JSON file
-        env:
-          GUILD_ID: ${{ secrets.GUILD_ID }}
-          DISCORD_TOKEN: ${{ secrets.DISCORD_TOKEN }}
-      # Branch creation and PR creation if changes detected
+```mermaid
+flowchart TD
+    F[Run Update Script] --> G{Changes Detected?}
+    G -->|Yes| H[Create New Branch]
+    H --> I[Commit Changes to JSON]
+    I --> J[Push Branch to GitHub]
+    J --> K[Create Pull Request]
+    K --> L[Assign Reviewer]
+    G -->|No| M[End Workflow]
+    L --> M
 ```
 
 ## Requirements
