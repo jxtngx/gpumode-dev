@@ -4,7 +4,7 @@
     "description": "Speaker: Adam Paszke",
     "scheduled_start_time": "2025-01-25T20:00:00+00:00",
     "entity_metadata": {
-      "location": "zoom"
+      "location": "https://www.youtube.com/@GPUMODE"
     }
   },
   {
@@ -12,7 +12,7 @@
     "description": "Speaker: Zihao Ye",
     "scheduled_start_time": "2025-01-24T20:00:00+00:00",
     "entity_metadata": {
-      "location": "zoom"
+      "location": "https://www.youtube.com/@GPUMODE"
     }
   },
   {
@@ -20,7 +20,7 @@
     "description": "Speaker: Magnus Strengert",
     "scheduled_start_time": "2025-02-14T18:00:00+00:00",
     "entity_metadata": {
-      "location": "zoom"
+      "location": "https://www.youtube.com/@GPUMODE"
     }
   },
   {
@@ -28,7 +28,7 @@
     "description": "Speaker: @pranjalssh",
     "scheduled_start_time": "2025-02-15T20:00:00+00:00",
     "entity_metadata": {
-      "location": "zoom"
+      "location": "https://www.youtube.com/@GPUMODE"
     }
   },
   {
@@ -36,7 +36,7 @@
     "description": "Speaker: Erik Schultheis",
     "scheduled_start_time": "2025-02-08T20:00:00+00:00",
     "entity_metadata": {
-      "location": "zoom"
+      "location": "https://www.youtube.com/@GPUMODE"
     }
   },
   {
@@ -44,7 +44,7 @@
     "description": "Speaker: Ali Hassani",
     "scheduled_start_time": "2025-02-22T20:00:00+00:00",
     "entity_metadata": {
-      "location": "zoom"
+      "location": "https://www.youtube.com/@GPUMODE"
     }
   },
   {
@@ -52,7 +52,7 @@
     "description": "Speaker: Manuel Candales",
     "scheduled_start_time": "2025-03-01T20:00:00+00:00",
     "entity_metadata": {
-      "location": "zoom"
+      "location": "https://www.youtube.com/@GPUMODE"
     }
   },
   {
@@ -60,7 +60,7 @@
     "description": "Speaker: Umar Jamil",
     "scheduled_start_time": "2025-03-08T20:00:00+00:00",
     "entity_metadata": {
-      "location": "zoom"
+      "location": "https://www.youtube.com/@GPUMODE"
     }
   },
   {
@@ -68,7 +68,7 @@
     "description": "Speaker: Jake Cannell",
     "scheduled_start_time": "2025-03-15T19:00:00+00:00",
     "entity_metadata": {
-      "location": "zoom"
+      "location": "https://www.youtube.com/@GPUMODE"
     }
   },
   {
@@ -76,7 +76,15 @@
     "description": "Speaker: Tanishq Kumar",
     "scheduled_start_time": "2025-03-22T19:00:00+00:00",
     "entity_metadata": {
-      "location": "zoom"
+      "location": "https://www.youtube.com/@GPUMODE"
+    }
+  },
+  {
+    "name": "How to benchmark accurately",
+    "description": "Speaker: Georgii Evtushenko",
+    "scheduled_start_time": "2025-05-10T19:00:00+00:00",
+    "entity_metadata": {
+      "location": "https://www.youtube.com/@GPUMODE"
     }
   }
 ]
