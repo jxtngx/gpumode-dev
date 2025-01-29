@@ -1,21 +1,5 @@
 [
   {
-    "name": "Mosaic GPU",
-    "description": "Speaker: Adam Paszke",
-    "scheduled_start_time": "2025-01-25T20:00:00+00:00",
-    "entity_metadata": {
-      "location": "https://www.youtube.com/@GPUMODE"
-    }
-  },
-  {
-    "name": "Flash Infer",
-    "description": "Speaker: Zihao Ye",
-    "scheduled_start_time": "2025-01-24T20:00:00+00:00",
-    "entity_metadata": {
-      "location": "https://www.youtube.com/@GPUMODE"
-    }
-  },
-  {
     "name": "NVIDIA Profiling",
     "description": "Speaker: Magnus Strengert",
     "scheduled_start_time": "2025-02-14T18:00:00+00:00",
