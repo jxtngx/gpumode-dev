@@ -1,21 +1,5 @@
 [
   {
-    "name": "NVIDIA Profiling",
-    "description": "Speaker: Magnus Strengert",
-    "scheduled_start_time": "2025-02-14T18:00:00+00:00",
-    "entity_metadata": {
-      "location": "https://illinois.zoom.us/j/85178224887?pwd=lHLSoQ0DtlbhKtAbFcGOD9crhKRqWG.1"
-    }
-  },
-  {
-    "name": "Outperforming CUBLAS on H100",
-    "description": "Speaker: @pranjalssh",
-    "scheduled_start_time": "2025-02-15T20:00:00+00:00",
-    "entity_metadata": {
-      "location": "https://www.youtube.com/@GPUMODE"
-    }
-  },
-  {
     "name": "Distributed GEMM",
     "description": "Speaker: Ali Hassani",
     "scheduled_start_time": "2025-02-22T20:00:00+00:00",
