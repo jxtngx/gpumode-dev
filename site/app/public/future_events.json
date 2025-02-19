@@ -70,5 +70,21 @@
     "entity_metadata": {
       "location": "youtube"
     }
+  },
+  {
+    "name": "KernelBot: Benchmark your kernels here on Discord",
+    "description": "Speakers: KernelBot team",
+    "scheduled_start_time": "2025-02-23T18:00:00+00:00",
+    "entity_metadata": {
+      "location": "youtube"
+    }
+  },
+  {
+    "name": "CuTe",
+    "description": "Speaker: Cris Cecka",
+    "scheduled_start_time": "2025-05-03T19:00:00+00:00",
+    "entity_metadata": {
+      "location": "youtube"
+    }
   }
 ]
