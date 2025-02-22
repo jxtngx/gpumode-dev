@@ -76,7 +76,7 @@
     "description": "Speakers: KernelBot team",
     "scheduled_start_time": "2025-02-23T18:00:00+00:00",
     "entity_metadata": {
-      "location": "youtube"
+      "location": "https://www.youtube.com/@GPUMODE"
     }
   },
   {
@@ -85,6 +85,14 @@
     "scheduled_start_time": "2025-05-17T19:00:00+00:00",
     "entity_metadata": {
       "location": "youtube"
+    }
+  },
+  {
+    "name": "torch.compile Q&A (interactive!)",
+    "description": "Speaker: Richard  Zou",
+    "scheduled_start_time": "2025-04-19T19:00:00+00:00",
+    "entity_metadata": {
+      "location": "https://www.youtube.com/@GPUMODE"
     }
   }
 ]
