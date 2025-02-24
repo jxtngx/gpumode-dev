@@ -1,13 +1,5 @@
 [
   {
-    "name": "Distributed GEMM",
-    "description": "Speaker: Ali Hassani",
-    "scheduled_start_time": "2025-02-22T20:00:00+00:00",
-    "entity_metadata": {
-      "location": "https://www.youtube.com/@GPUMODE"
-    }
-  },
-  {
     "name": "Low Bit Metal Kernels",
     "description": "Speaker: Manuel Candales",
     "scheduled_start_time": "2025-03-01T20:00:00+00:00",
@@ -72,14 +64,6 @@
     }
   },
   {
-    "name": "KernelBot: Benchmark your kernels here on Discord",
-    "description": "Speakers: KernelBot team",
-    "scheduled_start_time": "2025-02-23T18:00:00+00:00",
-    "entity_metadata": {
-      "location": "https://www.youtube.com/@GPUMODE"
-    }
-  },
-  {
     "name": "CuTe",
     "description": "Speaker: Cris Cecka",
     "scheduled_start_time": "2025-05-17T19:00:00+00:00",
@@ -91,6 +75,38 @@
     "name": "torch.compile Q&A (interactive!)",
     "description": "Speaker: Richard  Zou",
     "scheduled_start_time": "2025-04-19T19:00:00+00:00",
+    "entity_metadata": {
+      "location": "https://www.youtube.com/@GPUMODE"
+    }
+  },
+  {
+    "name": "TorchRL: Infrastructure for scaling test time compute",
+    "description": "Speaker: Vincent Moens",
+    "scheduled_start_time": "2025-04-26T19:00:00+00:00",
+    "entity_metadata": {
+      "location": "https://www.youtube.com/@GPUMODE/videos"
+    }
+  },
+  {
+    "name": "Dynasor: Efficiently Serving Reasoning Programs with Certaindex",
+    "description": "Speakers: Yichao Fu & Junda Chen",
+    "scheduled_start_time": "2025-05-24T19:00:00+00:00",
+    "entity_metadata": {
+      "location": "youtube"
+    }
+  },
+  {
+    "name": "FastVideo: accelerating large video diffusion models",
+    "description": "",
+    "scheduled_start_time": "2025-05-31T19:00:00+00:00",
+    "entity_metadata": {
+      "location": "youtube"
+    }
+  },
+  {
+    "name": "THE Ultra-Scale Playbook",
+    "description": "Speaker: Nouamane Tazi",
+    "scheduled_start_time": "2025-02-28T20:00:00+00:00",
     "entity_metadata": {
       "location": "https://www.youtube.com/@GPUMODE"
     }
