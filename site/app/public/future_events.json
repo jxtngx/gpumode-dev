@@ -110,5 +110,13 @@
     "entity_metadata": {
       "location": "https://www.youtube.com/@GPUMODE"
     }
+  },
+  {
+    "name": "Optimizing linear attention in Triton",
+    "description": "Speaker: Songlin Yang",
+    "scheduled_start_time": "2025-06-07T19:00:00+00:00",
+    "entity_metadata": {
+      "location": "https://www.youtube.com/@GPUMODE"
+    }
   }
 ]
