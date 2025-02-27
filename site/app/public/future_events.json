@@ -118,5 +118,13 @@
     "entity_metadata": {
       "location": "https://www.youtube.com/@GPUMODE"
     }
+  },
+  {
+    "name": "HOLD: Tenstorrent",
+    "description": "",
+    "scheduled_start_time": "2025-05-03T19:00:00+00:00",
+    "entity_metadata": {
+      "location": "youtube"
+    }
   }
 ]
