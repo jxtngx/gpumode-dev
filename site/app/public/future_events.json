@@ -1,13 +1,5 @@
 [
   {
-    "name": "Low Bit Metal Kernels",
-    "description": "Speaker: Manuel Candales",
-    "scheduled_start_time": "2025-03-01T20:00:00+00:00",
-    "entity_metadata": {
-      "location": "https://www.youtube.com/@GPUMODE"
-    }
-  },
-  {
     "name": "CUDA, Triton, Flash Attention: a learning journey",
     "description": "Speaker: Umar Jamil",
     "scheduled_start_time": "2025-03-08T20:00:00+00:00",
@@ -101,14 +93,6 @@
     "scheduled_start_time": "2025-05-31T19:00:00+00:00",
     "entity_metadata": {
       "location": "youtube"
-    }
-  },
-  {
-    "name": "THE Ultra-Scale Playbook",
-    "description": "Speaker: Nouamane Tazi",
-    "scheduled_start_time": "2025-02-28T20:00:00+00:00",
-    "entity_metadata": {
-      "location": "https://www.youtube.com/@GPUMODE"
     }
   },
   {
