@@ -52,7 +52,7 @@ export default async function FutureLectures() {
                                 <p className="text-neutral-900 dark:text-neutral-100 text-left text-balance w-[300px]">
                                     {lecture.name}
                                 </p>
-                                <p className="text-neutral-600 dark:text-neutral-400 text-center text-pretty w-[100px]">
+                                <p className="text-neutral-600 dark:text-neutral-400 text-center text-pretty w-[200px]">
                                     {lecture.description.replace("Speaker: ", "")}
                                 </p>
                                 <hr/>

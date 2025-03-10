@@ -58,7 +58,7 @@ export default function RootLayout({
       )}
       suppressHydrationWarning
     >
-      <body className="antialiased max-w-xl mx-4 mt-8 lg:mx-auto min-h-screen dark:bg-[#111]">
+      <body className="antialiased max-w-2xl mx-4 mt-8 lg:mx-auto min-h-screen dark:bg-[#111]">
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
