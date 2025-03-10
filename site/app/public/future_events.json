@@ -1,13 +1,5 @@
 [
   {
-    "name": "CUDA, Triton, Flash Attention: a learning journey",
-    "description": "Speaker: Umar Jamil",
-    "scheduled_start_time": "2025-03-08T20:00:00+00:00",
-    "entity_metadata": {
-      "location": "https://www.youtube.com/@GPUMODE"
-    }
-  },
-  {
     "name": "Consumer GPU performance",
     "description": "Speaker: Jake Cannell",
     "scheduled_start_time": "2025-03-15T19:00:00+00:00",
@@ -107,6 +99,14 @@
     "name": "HOLD: Tenstorrent",
     "description": "",
     "scheduled_start_time": "2025-05-03T19:00:00+00:00",
+    "entity_metadata": {
+      "location": "youtube"
+    }
+  },
+  {
+    "name": "D-Matrix Corsair: delivering low latency batched inference for inference-time-compute",
+    "description": "Speakers:\nGaurav Jain - Kernels\nAkhil Arunkumar - Inference Engine\nSatyam Srivastava - Architecture",
+    "scheduled_start_time": "2025-06-14T17:00:00+00:00",
     "entity_metadata": {
       "location": "youtube"
     }
