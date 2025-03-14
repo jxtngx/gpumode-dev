@@ -8,13 +8,3 @@ Connect with GPU enthusiasts, share knowledge, and explore the future of GPU pro
 
 - [Discord server](https://discord.gg/gpumode)
 - Attend our weekly lectures and workshops
-
-## Contributing to the site
-
-We welcome contributions! See our [Contributing Guide](CONTRIBUTING.md) for details.
-
-Check out our [documentation](./site/docs) for:
-- Development environment setup
-- Tutorial series
-- Best practices
-- Community guidelines
