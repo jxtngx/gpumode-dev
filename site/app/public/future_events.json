@@ -1,13 +1,5 @@
 [
   {
-    "name": "Scaling Laws for Low Precision",
-    "description": "Speaker: Tanishq Kumar",
-    "scheduled_start_time": "2025-03-22T19:00:00+00:00",
-    "entity_metadata": {
-      "location": "https://www.youtube.com/@GPUMODE"
-    }
-  },
-  {
     "name": "How to benchmark accurately",
     "description": "Speaker: Georgii Evtushenko",
     "scheduled_start_time": "2025-05-10T19:00:00+00:00",
