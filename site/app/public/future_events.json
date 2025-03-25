@@ -102,5 +102,13 @@
     "entity_metadata": {
       "location": "youtube"
     }
+  },
+  {
+    "name": "Factorio Learning Env",
+    "description": "",
+    "scheduled_start_time": "2025-07-05T19:00:00+00:00",
+    "entity_metadata": {
+      "location": "youtube"
+    }
   }
 ]
